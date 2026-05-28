@@ -9,7 +9,7 @@ namespace WebApplicationAws.src.Infrastructure.Persistance.PostgreSQL
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options) { }
 
-        public DbSet<Account> Accounts { get; set; }
-        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Account> Account { get; set; }
+        public DbSet<Transaction> Transaction { get; set; }
     }
 }

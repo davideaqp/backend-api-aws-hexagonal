@@ -14,16 +14,16 @@ namespace WebApplicationAws.src.Infrastructure.Persistance.PostgreSQL.Repositori
         }
 
         public async Task<Transaction?> GetByIdAsync(Guid id)
-            => await _context.Transactions.FindAsync(id);
+            => await _context.Transaction.FindAsync(id);
 
         public async Task<IEnumerable<Transaction>> GetByAccountIdAsync(Guid accountId)
-            => await _context.Transactions
+            => await _context.Transaction
                             .Where(t => t.AccountId == accountId)
                             .ToListAsync();
 
         public async Task AddAsync(Transaction transaction)
         {
-            await _context.Transactions.AddAsync(transaction);
+            await _context.Transaction.AddAsync(transaction);
             await _context.SaveChangesAsync();
         }
     }

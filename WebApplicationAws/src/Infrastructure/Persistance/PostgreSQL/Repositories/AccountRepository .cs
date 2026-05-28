@@ -14,29 +14,29 @@ namespace WebApplicationAws.src.Infrastructure.Persistance.PostgreSQL.Repositori
         }
 
         public async Task<Account?> GetByIdAsync(Guid id)
-            => await _context.Accounts.FindAsync(id);
+            => await _context.Account.FindAsync(id);
 
         public async Task<IEnumerable<Account>> GetAllAsync()
-            => await _context.Accounts.ToListAsync();
+            => await _context.Account.ToListAsync();
 
         public async Task AddAsync(Account account)
         {
-            await _context.Accounts.AddAsync(account);
+            await _context.Account.AddAsync(account);
             await _context.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(Account account)
         {
-            _context.Accounts.Update(account);
+            _context.Account.Update(account);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(Guid id)
         {
-            var account = await _context.Accounts.FindAsync(id);
+            var account = await _context.Account.FindAsync(id);
             if (account != null)
             {
-                _context.Accounts.Remove(account);
+                _context.Account.Remove(account);
                 await _context.SaveChangesAsync();
             }
         }

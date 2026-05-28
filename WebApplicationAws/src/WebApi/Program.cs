@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using WebApplicationAws.src.Domain.Repositories;
+using WebApplicationAws.src.Infrastructure.Persistance.PostgreSQL;
 using WebApplicationAws.src.Infrastructure.Persistance.PostgreSQL.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +31,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
