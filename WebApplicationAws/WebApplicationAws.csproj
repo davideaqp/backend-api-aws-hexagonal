@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
@@ -14,8 +16,8 @@
     <Folder Include="src\Application\Accounts\" />
     <Folder Include="src\Application\Transaction\" />
     <Folder Include="src\Infrastructure\Messaging\" />
+    <Folder Include="src\Infrastructure\Persistance\DinamoDB\" />
     <Folder Include="src\Infrastructure\Security\" />
-    <Folder Include="src\Infrastructure\Persistance\" />
     <Folder Include="src\WebApi\Controllers\" />
     <Folder Include="src\WebApi\DTOs\" />
     <Folder Include="src\WebApi\Middleware\" />
