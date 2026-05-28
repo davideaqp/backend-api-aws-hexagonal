@@ -1,0 +1,42 @@
+# Compilación
+bin/
+obj/
+
+# Publicaciones
+publish/
+*.pubxml
+*.pubxml.user
+
+# Configuración de usuario
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archivos de VS Code / Visual Studio
+.vscode/
+.vs/
+
+# Paquetes NuGet
+*.nupkg
+packages/
+*.snupkg
+
+# Logs y temporales
+*.log
+*.tmp
+*.temp
+
+# Configuración de IIS Express
+iisexpress/
+
+# Archivos de configuración locales
+appsettings.Development.json
+appsettings.Local.json
+
+# Docker
+docker-compose.override.yml
+
+# Otros
+*.dbmdl
+*.jfm
